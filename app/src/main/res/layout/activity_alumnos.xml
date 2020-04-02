@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AlumnosActivity"
+    tools:context=".Activitys.AlumnosActivity"
     android:orientation="vertical">
 
     <TextView
@@ -16,11 +16,19 @@
         android:textColor="#000000"
         android:textSize="18sp" />
 
+    <Button
+        android:id="@+id/add_alumno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir"
+        android:background="@drawable/theme_button"
+        android:textColor="#ffffff"/>
+
     <ListView
         android:id="@+id/lst_usertwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp" ></ListView>
 
     <include layout="@layout/fragment_second_user"></include>

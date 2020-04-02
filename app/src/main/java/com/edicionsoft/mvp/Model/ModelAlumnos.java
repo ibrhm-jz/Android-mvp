@@ -1,10 +1,15 @@
 package com.edicionsoft.mvp.Model;
 
+import android.content.Intent;
+import android.widget.Toast;
+
 import com.edicionsoft.mvp.Helpers.URLS;
 import com.edicionsoft.mvp.Presenter.PresenterAlumnos;
 import com.edicionsoft.mvp.View.ViewAlumnos;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.util.ArrayList;
@@ -101,6 +106,44 @@ public class ModelAlumnos implements PresenterAlumnos {
         });
 
     }
+
+    @Override
+    public void addAlumnos( String key, RequestParams params) {
+        client.addHeader("Content-Type","application/x-www-form-urlencoded");
+        client.addHeader("Authorization","Token "+key);
+        client.post(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
+    }
+
+    @Override
+    public void updateAlumnos(String id,String key,RequestParams params) {
+        client.addHeader("Content-Type","application/x-www-form-urlencoded");
+        client.addHeader("Authorization","Token "+key);
+        client.put(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
+    }
+
+
 
 
 }
